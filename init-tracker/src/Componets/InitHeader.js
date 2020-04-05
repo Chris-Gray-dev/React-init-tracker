@@ -3,7 +3,7 @@ import AddInit from "./AddInit"
 import RollInit from "./RollInit"
 import Card from 'react-bootstrap/Card'
 
-function InitHeader()
+function InitHeader(props)
 {
 
 
@@ -14,7 +14,7 @@ function InitHeader()
                 <Card.Body>
                     <RollInit />
                     <div className = "InlineBlock">
-                        <AddInit className="InlineBlock" />
+                        <AddInit addCreature={props.addCreature} className="InlineBlock" />
                     </div>
 
                     <div className = "InlineBlock">

@@ -1,6 +1,7 @@
 import React from 'react'
 import Dropdown from 'react-bootstrap/Dropdown'
-function AddInit()
+
+function AddInit(props)
 {
 
 
@@ -11,7 +12,7 @@ function AddInit()
                 Add
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item >Creature</Dropdown.Item>
+                <Dropdown.Item onClick={props.addCreature} >Creature</Dropdown.Item>
                 <Dropdown.Item >Lair</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>

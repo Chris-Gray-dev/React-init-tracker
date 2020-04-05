@@ -2,19 +2,9 @@ import React, {useState} from 'react'
 import InitListItem from './InitListItem'
 import {DragDropContext,Droppable} from "react-beautiful-dnd"
 
-const data=[
-    {id:"1",text:"Monster one"},
-    {id:"2",text:"Monster two"},
-    {id:"3",text:"Monster three"},
-    {id:"4",text:"Player one"},
-]
-
-
-
-
 
 // Main component
-function InitList()
+function InitList(props)
 {
     // helper functions
     function RenderInitItems(arr){
@@ -22,19 +12,19 @@ function InitList()
         return array
     }
 
-    function onDragEnd(result){
-
+    function onDragEnd(result,a){
+        console.log(result)
     }
 
-    const [list,setList] = useState(data);
+    
     const id = '1';
 
     return(
-        <DragDropContext>
-            <Droppable droppableId={id}>
+        <DragDropContext onDragEnd={onDragEnd}>
+            <Droppable droppableId={id} >
                 {provided=>(
                     <div ref={provided.innerRef} {...provided.droppableProps} className = "Init-List">
-                        {RenderInitItems(list)}
+                        {RenderInitItems(props.list)}
                         {provided.placeholder}
                     </div>
                 )}
