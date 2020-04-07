@@ -14,7 +14,7 @@ function InitListItem(props)
             padding:10,
             margin:10,
             borderTop:'solid black 1px',
-            borderBottom:'solid black 1px',
+            borderBottom:`solid ${color} 3px`,
             borderRight:'solid black 1px',
             background:"white"
     }
@@ -31,8 +31,8 @@ function InitListItem(props)
                 (provided)=>(
                     <div  {...provided.dragHandleProps} {...provided.draggableProps} ref={provided.innerRef}>
                         <div style={Style}>
-                            <h1>{props.info.id}</h1>
-                            <h1>{props.info.text}</h1>  
+                            <h6>{props.info.id}</h6>
+                            <h6>{props.info.text}</h6>  
                         </div>                                  
                     </div>
                 )
