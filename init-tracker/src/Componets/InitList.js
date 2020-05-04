@@ -13,7 +13,31 @@ function InitList(props)
     }
 
     function onDragEnd(result,a){
-        console.log(result)
+        const{ destination, source, draggableId} = result
+        if (!destination)
+        {
+            return
+        }
+
+        if(destination.droppableId === source.droppableId 
+            && destination.index === source.index )
+        {
+                return
+        }
+
+        const col = [...props.list] // copy state
+
+        const ele = col[source.index] // copy element that moved
+
+        col.splice(source.index,1) // delete moved element
+        col.splice(destination.index,0,ele) // add moved element
+
+        props.setList(col)
+        
+
+        
+
+    
     }
 
     

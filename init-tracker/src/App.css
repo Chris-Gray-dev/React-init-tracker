@@ -7,8 +7,14 @@
 .InlineBlock
 {
   display: inline-block;
+  margin: 10;
 }
 .InitList
 {
   padding: 10;
+  
+}
+.spacing
+{
+  padding-left: 15px;
 }
