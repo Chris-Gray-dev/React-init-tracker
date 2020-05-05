@@ -61,7 +61,6 @@ function InitListItem(props)
                     </div>
                 )
             }
-            
         </Draggable>
     )
 }

@@ -33,10 +33,6 @@ function InitList(props)
         col.splice(destination.index,0,ele) // add moved element
 
         props.setList(col)
-        
-
-        
-
     
     }
 
