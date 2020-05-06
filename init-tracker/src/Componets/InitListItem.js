@@ -1,5 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import {Draggable} from "react-beautiful-dnd"
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/Form'
 
 // From post https://stackoverflow.com/a/13532993
 function shadeColor(color, percent) {
@@ -16,9 +18,9 @@ function shadeColor(color, percent) {
     G = (G<255)?G:255;  
     B = (B<255)?B:255;  
 
-    var RR = ((R.toString(16).length==1)?"0"+R.toString(16):R.toString(16));
-    var GG = ((G.toString(16).length==1)?"0"+G.toString(16):G.toString(16));
-    var BB = ((B.toString(16).length==1)?"0"+B.toString(16):B.toString(16));
+    var RR = ((R.toString(16).length===1)?"0"+R.toString(16):R.toString(16));
+    var GG = ((G.toString(16).length===1)?"0"+G.toString(16):G.toString(16));
+    var BB = ((B.toString(16).length===1)?"0"+B.toString(16):B.toString(16));
 
     return "#"+RR+GG+BB;
 }
@@ -55,8 +57,9 @@ function InitListItem(props)
                 (provided)=>(
                     <div  {...provided.dragHandleProps} {...provided.draggableProps} ref={provided.innerRef}>
                         <div style={Style}>
-                            <h6>{props.info.id}</h6>
-                            <h6>{props.info.text}</h6>  
+                            <input type="text" placeholder="Init" maxLength="2"></input> 
+                            <input type="text" placeholder="Name" maxLength="64"></input>
+                           
                         </div>                                  
                     </div>
                 )

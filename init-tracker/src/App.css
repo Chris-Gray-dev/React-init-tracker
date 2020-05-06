@@ -18,3 +18,16 @@
 {
   padding-left: 15px;
 }
+
+input{
+  border: none;
+  border-color: transparent;
+}
+
+input:hover{
+  border: 1px solid #999;
+}
+
+input:focus{
+  border: 1px solid #999;
+}
